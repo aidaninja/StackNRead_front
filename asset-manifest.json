@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/StackNRead_front/static/css/main.0b4c86c1.chunk.css",
+    "main.js": "/StackNRead_front/static/js/main.b534d290.chunk.js",
+    "main.js.map": "/StackNRead_front/static/js/main.b534d290.chunk.js.map",
+    "runtime~main.js": "/StackNRead_front/static/js/runtime~main.896a62d4.js",
+    "runtime~main.js.map": "/StackNRead_front/static/js/runtime~main.896a62d4.js.map",
+    "static/js/2.512c3c3e.chunk.js": "/StackNRead_front/static/js/2.512c3c3e.chunk.js",
+    "static/js/2.512c3c3e.chunk.js.map": "/StackNRead_front/static/js/2.512c3c3e.chunk.js.map",
+    "index.html": "/StackNRead_front/index.html",
+    "precache-manifest.69f08526df2513c5e25eca2ef300fe44.js": "/StackNRead_front/precache-manifest.69f08526df2513c5e25eca2ef300fe44.js",
+    "service-worker.js": "/StackNRead_front/service-worker.js",
+    "static/css/main.0b4c86c1.chunk.css.map": "/StackNRead_front/static/css/main.0b4c86c1.chunk.css.map",
+    "static/media/styles.scss": "/StackNRead_front/static/media/top_placeholder.0442d746.jpg"
+  }
+}
