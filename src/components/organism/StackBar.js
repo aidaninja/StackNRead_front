@@ -45,7 +45,7 @@ export default connect( mapStateToProps, { addStack })((props) => {
             query: stackQuery
         }
 
-        await fetch('http://localhost:8000/graphql', {
+        await fetch('https://stacknread.herokuapp.com/graphql', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

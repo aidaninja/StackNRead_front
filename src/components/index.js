@@ -35,7 +35,7 @@ export default connect(mapStateToProps, {fetchUser})((props)=>{
               }
             }`
         }
-        fetch('http://localhost:8000/graphql', {
+        fetch('https://stacknread.herokuapp.com/graphql', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

@@ -36,7 +36,7 @@ export default  connect(mapStateToProps, {createTag})((props) =>{
             query: tagQuery
         }
         const loginToken = props.login.token
-        fetch('http://localhost:8000/graphql', {
+        fetch('https://stacknread.herokuapp.com/graphql', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {

@@ -81,7 +81,7 @@ export default (props) =>{
             const signUpRequestBody = {
                 query: signUpQuery(name, hashedPass)
             }
-            await fetch('http://localhost:8000/graphql', {
+            await fetch('https://stacknread.herokuapp.com/graphql', {
                 method: 'POST',
                 body: JSON.stringify(signUpRequestBody),
                 headers: {
@@ -100,7 +100,7 @@ export default (props) =>{
             console.log('signUp');
         }
 
-        await fetch('http://localhost:8000/graphql', {
+        await fetch('https://stacknread.herokuapp.com/graphql', {
             method: 'POST',
             body: JSON.stringify(requestBody),
             headers: {
