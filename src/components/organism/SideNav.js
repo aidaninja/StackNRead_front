@@ -1,7 +1,13 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { logOut  } from '../../redux/actions'
 
-export default (props) => {
+export default connect(null, {logOut})((props) => {
+
+    const redirector = path => {
+        props.history.push(path)
+    }
 
     return (
         <div className="side-nav">
@@ -12,14 +18,14 @@ export default (props) => {
             <div >
                 <ul className="side-nav_links">
                     <li>
-                        <Link  className="side-nav_links_link" to="/my">My Page</Link>
+                        <NavLink  className="side-nav_links_link" to="/my">My Page</NavLink>
                     </li>
                     <li>
-                        <Link className="side-nav_links_link" to="/stack">Stack</Link>
+                        <NavLink className="side-nav_links_link" to="/stack">Stack</NavLink>
                     </li>
-                    <li>
-                        <Link className="side-nav_links_link" to="/read">Read</Link>
-                    </li>
+                    {/* <li>
+                        <NavLink className="side-nav_links_link" to="/read">Read</NavLink>
+                    </li> */}
                 </ul>
             </div>
             <div className="side-nav_logout">
@@ -27,11 +33,12 @@ export default (props) => {
                     className="side-nav_logout_btn"
                     type="button"
                     defaultValue="Log out"
-                    onClick={()=>{console.log("log out")}}
+                    onClick={()=>{
+                        props.logOut()
+                        redirector('/')
+                    }}
                     />
             </div>
         </div>
     )
-
-
-}
+})

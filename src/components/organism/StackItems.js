@@ -1,74 +1,22 @@
 import React from 'react'
 import StackItem from '../atoms/StackItem'
 
-
-const stub = [
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-    {
-        url: "https://www.google.com",
-        title: "google",
-        dateAdded: "08/09/2018",
-        siteUrl: "google.com",
-    },
-]
-
 export default (props)=>{
     const {label, items} = props
 
-    const itemsList = stub;
+    const itemsList = items;
 
     const getStackItems = ()=>(
         <ul className="stack-items">
             {
-                itemsList.map(item=>(
-                    <li className="stack-items_item">
+                itemsList.map((item, i)=>(
+                    <li className="stack-items_item"  key={i} >
                         <StackItem
                             url={item.url}
                             title={item.title}
                             dateAdded={item.dateAdded}
                             siteUrl={item.siteUrl}
+                            thumbnail = { item.thumbnail }
                         />
                     </li>
                 ))
@@ -76,7 +24,6 @@ export default (props)=>{
         </ul>
     )
     
-
     return (
         <div className="items">
             <h2 className="items_label">{label}</h2>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {connect } from "react-redux"
 
 import SideNav from '../organism/SideNav'
 import StackBar from '../organism/StackBar'
@@ -6,35 +7,40 @@ import StackBar from '../organism/StackBar'
 import Tags from '../organism/Tags'
 import StackItems from '../organism/StackItems'
 
-
 import NewTagModal from '../organism/NewTagModal'
 
-export default (props)=>{
+const mapStateToProps = (state) => {
+    return {
+        login: state.login,
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)((props)=>{
+    if(!props.login.status) props.history.push('/');
 
     const [modalState, changeModalState] = useState(false)
 
     const switchModal = ()=>changeModalState(!modalState)
-
-
     return (
         <>
-            <SideNav />
+            <SideNav history={props.history} />
             <div className="main">
                 <div className="wrapper stack">
                     <StackBar />
                     <div className="contents-wrapper">
-                        <Tags modalSwitch={switchModal} />
+                        <Tags items={props.user.items.tag} modalSwitch={switchModal} />
                         <StackItems
                             label="STACKED"
-                            items={[]}
+                            items={props.user.items.stack}
                         />
                     </div>
                 </div>
                 {modalState&&(
-                    <NewTagModal modalSwitch={switchModal} />
-                )
+                        <NewTagModal modalSwitch={switchModal} />
+                     )
                 }
             </div>
         </>
     )
-    }
+    })
