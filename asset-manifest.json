@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/StackNRead_front/static/css/main.b3999821.chunk.css",
-    "main.js": "/StackNRead_front/static/js/main.432c81c4.chunk.js",
-    "main.js.map": "/StackNRead_front/static/js/main.432c81c4.chunk.js.map",
+    "main.css": "/StackNRead_front/static/css/main.9bf53f95.chunk.css",
+    "main.js": "/StackNRead_front/static/js/main.dda78576.chunk.js",
+    "main.js.map": "/StackNRead_front/static/js/main.dda78576.chunk.js.map",
     "runtime~main.js": "/StackNRead_front/static/js/runtime~main.896a62d4.js",
     "runtime~main.js.map": "/StackNRead_front/static/js/runtime~main.896a62d4.js.map",
     "static/js/2.2a1471d9.chunk.js": "/StackNRead_front/static/js/2.2a1471d9.chunk.js",
     "static/js/2.2a1471d9.chunk.js.map": "/StackNRead_front/static/js/2.2a1471d9.chunk.js.map",
     "index.html": "/StackNRead_front/index.html",
-    "precache-manifest.1b5528e7ead880feaf576a30b39cceb3.js": "/StackNRead_front/precache-manifest.1b5528e7ead880feaf576a30b39cceb3.js",
+    "precache-manifest.14c87c70675285f748fb7c0c9c0a8d42.js": "/StackNRead_front/precache-manifest.14c87c70675285f748fb7c0c9c0a8d42.js",
     "service-worker.js": "/StackNRead_front/service-worker.js",
-    "static/css/main.b3999821.chunk.css.map": "/StackNRead_front/static/css/main.b3999821.chunk.css.map",
+    "static/css/main.9bf53f95.chunk.css.map": "/StackNRead_front/static/css/main.9bf53f95.chunk.css.map",
     "static/media/profile.jpg": "/StackNRead_front/static/media/profile.06af00f2.jpg",
     "static/media/stack-icon.png": "/StackNRead_front/static/media/stack-icon.29bf457b.png",
     "static/media/styles.scss": "/StackNRead_front/static/media/top_placeholder.9bc66abc.jpg"
