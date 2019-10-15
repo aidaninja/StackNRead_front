@@ -3,6 +3,8 @@ import {  NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOut  } from '../../redux/actions'
 
+import logo from '../../img/logo_text.png'
+
 export default connect(null, {logOut})((props) => {
 
     const redirector = path => {
@@ -12,7 +14,7 @@ export default connect(null, {logOut})((props) => {
     return (
         <div className="side-nav">
             <div className="side-nav_logo">
-                <img className="top_header_logo" src="../img/logo_text.png" alt="logo" />
+                <img className="top_header_logo" src={logo} alt="logo" />
                 {/* <img className="top_header_logo" src="../img/logo_circle.png" alt="logo" /> */}
             </div>
             <div >

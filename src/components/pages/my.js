@@ -6,12 +6,12 @@ import StackBar from '../organism/StackBar'
 
 import UserProfile from '../organism/UserProfile'
 import UserActivity from '../organism/UserActivity';
+import pp from '../../img/profile.jpg'
 
 class My extends React.Component {
     constructor(props) {
         super(props)
         if(!this.props.login.status){
-            console.log("out")
             this.props.history.push('/');
         }
     }
@@ -25,7 +25,8 @@ class My extends React.Component {
                     <StackBar />
                     <div className="contents-wrapper">
                         <UserProfile
-                            pp={"../img/DOLF_spotify.jpeg"}
+                            // pp={"../img/DOLF_spotify.jpeg"}
+                            pp={pp}
                             userName={this.props.user.name}
                         />
                         <UserActivity/>

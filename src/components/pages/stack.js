@@ -29,11 +29,15 @@ export default connect(mapStateToProps)((props)=>{
                 <div className="wrapper stack">
                     <StackBar />
                     <div className="contents-wrapper">
-                        <Tags items={props.user.items.tag} modalSwitch={switchModal} />
-                        <StackItems
-                            label="STACKED"
-                            items={props.user.items.stack}
-                        />
+                        <div className="tag-wrapper">
+                            <Tags items={props.user.items.tag} modalSwitch={switchModal} />
+                        </div>
+                        <div className="stack-wrapper" >
+                            <StackItems
+                                label="STACKED"
+                                items={props.user.items.stack}
+                            />
+                        </div>
                     </div>
                 </div>
                 {modalState&&(

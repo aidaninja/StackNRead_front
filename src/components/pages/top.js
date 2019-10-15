@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 
 import { logIn, fetchUser  } from '../../redux/actions'
 
+import logo from '../../img/logo_text.png'
+
 const mapStateToProps = state => {
     return {
         login: state.login,
@@ -35,7 +37,9 @@ export default  connect(mapStateToProps, {logIn,fetchUser})((props)=> {
         <div className="wrapper-top">
             <div className="top">
                 <div className="top_header">
-                    <img className="top_header_logo" src="../img/logo_text.png" alt="logo" />
+                    <div className="top_header_logo">
+                        <img src={logo} alt="logo" />
+                    </div>
                     <p 
                         className="top_header_log-in"
                         onClick={()=>{

@@ -50,7 +50,9 @@ export default connect(mapStateToProps)((props) => {
                         onClick={()=>{props.history.push('/stack')}}
                     />
                 </div>
-                {getItems()}
+                <div className="stack-wrapper">
+                    {getItems()}
+                </div>
             </div>
                 </div>
             </div>

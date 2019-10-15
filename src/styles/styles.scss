@@ -5,6 +5,18 @@
 //variables
 @import "./variables/variables";
 
+//media querys
+$sp: 48rem;
+@mixin sp {
+    @media (max-width: ($sp)) {
+      @content;
+    }
+  }
+
+  .root{
+    height: 100%;
+}
+
 //top
 .wrapper-top{
     font-family: $primary-font;
@@ -16,6 +28,9 @@
         width: 100vw;
         height: 100vh;
         background: rgba(0,0,0,.2);
+        @include sp{
+            height: 100%;
+        }
         &_body{
             position: absolute;
             top: 20%;
@@ -24,6 +39,11 @@
             background: #F6FAFA;
             width: 50%;
             max-width: 50rem;
+            @include sp{
+                top: 30%;
+                width: 100%;
+                max-width: 32rem;
+            }
             // height: 50rem;
             padding: 2rem;
             border-radius: 2rem;
@@ -34,7 +54,7 @@
             }
             &_input{
                 display: block;
-                width: 80%;
+                max-width: 80%;
                 margin: 2rem auto 0;
                 padding: .5rem 1rem;
                 border: none;
@@ -47,6 +67,8 @@
                 display: block;
                 margin: 3rem auto 0;
                 border: .2rem solid #007065;
+                background: #f3fffe;
+                border-radius: 1rem;
                 padding: .5rem 2rem;
                 &:focus{
                     outline: none;
@@ -59,38 +81,60 @@
                 right: .5rem;
                 width: 2vw;
                 height: 2vw;
+                @include sp{
+                    right: 2.5rem;
+                }
             }
         }
     }
 }
 
 .top{
-    width: 98rem;
+    max-width: 98rem;
+    width: 100%;
     height: 100vh;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    @include sp{
+        min-height: 81.2rem
+    }
     &_header{
         display: flex;
         justify-content: space-between;
         &_logo{
             width: 20rem;
+            img{
+                width: 100%;
+            }
+            @include sp{
+            }
         }
         &_log-in{
             cursor: pointer;
             font-size: 3rem;
+            @include sp{
+                margin-right: 2rem;
+            }
         }
     }
     &_main{
         display: flex;
         &_left{
+            @include sp{
+                margin: 0 auto;
+            }
             &_catch{
                 padding-right: 5.8rem;
                 font-size: 7.8rem;
                 font-weight: 700;
                 line-height: 1.2;
                 letter-spacing: 3rem;
+                @include sp{
+                    padding: 0 0 0 1rem;
+                    font-size: 6.8rem;
+                }
             }
             &_sign-up{
                 cursor: pointer;
@@ -111,6 +155,9 @@
             background: url(./img/top_placeholder.jpg);
             background-size: cover;
             background-position: center;
+            @include sp{
+                display: none;
+            }
         }
     }
     &_footer{
@@ -126,17 +173,60 @@
     font-family: $primary-font;
     margin-left: 20rem;
     position: relative;
+    @include sp{
+        margin-left: 0;
+     }
     & .wrapper {
         width: 98rem;
         height: 100vh;
         margin: 0 auto;
         padding: 1rem;
         // overflow: auto;
+        @include sp{
+           width: 100%;
+        }
         &.my{
            
         }
         &.stack{
 
+            .tag-wrapper{
+                @include sp{
+                    .stack-items {
+                        margin-left: -1rem;
+                        &_item{
+                            margin-left: 1rem;
+                            width: 30%;
+                        }
+                    }
+                    .stack-item {
+                        width: 100%;
+                        height: 10rem;
+                        &_title{
+                            font-size: 1.6rem;
+                        }
+                    }
+                 }
+            }
+            .stack-wrapper{
+                @include sp{
+                    .stack-items {
+                        margin-left: 0;
+                        padding-bottom: 10rem;
+                        &_item{
+                            margin-left: 0;
+                            width: 100%;
+                        }
+                    }
+                    .stack-item {
+                        width: 100%;
+                        height: 10rem;
+                        &_title{
+                            font-size: 1.6rem;
+                        }
+                    }
+                 }
+            }
         }
         &.read{
 
@@ -162,6 +252,9 @@
             border: .3rem solid #CCE2E0;
             border-radius: 2rem;
             font-size: 2rem;
+            @include sp{
+                width: 80%;
+            }
             &_input{
                 display: block;
                 width: 80%;
@@ -177,6 +270,7 @@
                 display: block;
                 margin: 2rem auto 0;
                 border: .2rem solid #007065;
+                background: #f3fffe;
                 border-radius: 1rem;
                 padding: .5rem 2rem;
                 &:focus{
@@ -190,10 +284,15 @@
                 right: .5rem;
                 width: 2vw;
                 height: 2vw;
+                @include sp{
+                    right: 2.5rem;
+                }
             }
         }   
     }
 }
+
+
 
 //stack bar
 .stack-bar{
@@ -219,6 +318,9 @@
         &:focus{
             outline: none;
         }
+        @include sp{
+            width: 65%;
+        }
     }
     &_tag{
         background: #CCE2E0;
@@ -230,6 +332,9 @@
         &:focus{
             outline: none;
         }
+        @include sp{
+            width: 15%;
+        }
     }
     &_btn{
         background: #CCE2E0;
@@ -240,6 +345,9 @@
         border-radius: 0rem 1rem 1rem 0rem;
         &:focus{
             outline: none;
+        }
+        @include sp{
+            width: 20%;
         }
     }
 }
@@ -259,19 +367,46 @@
     z-index: 100;
     background: #99C6C1;
     box-shadow: 0 .1rem .3rem rgba(0,0,0,0.12), 0 .1rem .2rem rgba(0,0,0,0.24);
+    @include sp{
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: auto;
+        top: auto;
+        bottom: 0;
+    }
     &_logo{
         margin-top: 2rem;
         text-align: center;
         img{
             // width: 60%;
         }
+        @include sp{
+            display: none;
+        }
     }
     &_links{
         margin-top: 2rem;
+        @include sp{
+            display: flex;
+            justify-content: space-around;
+            margin-top: 0;
+            li{
+                width: 50%;
+                text-align: center;
+            }
+        }
         &_link{
             display: block;
             padding: 1rem 0 1rem 4rem;
             transition: all .1s ease;
+            @include sp{
+                padding: 1rem 0;
+                &.active{
+                    background: #CCE2E0;
+                    color: #007065;
+                }
+            }
             &:hover{
                 background: #CCE2E0;
                 color: #007065;
@@ -282,6 +417,10 @@
         margin-top: auto;
         padding: 1rem 0;
         text-align: center;
+        @include sp{
+            margin-top: 0;
+            display: none;
+        }
         &_btn{
             font-size: 2rem;
             font-weight: 700;
@@ -301,7 +440,6 @@
 .contents-wrapper{
     height: calc(100% - 5rem);
     overflow: auto;
-
     margin-top: .2rem;
     //items
     .items{
@@ -348,11 +486,18 @@
 .user-profile{
     display: flex;
     padding: 3rem 2rem 0;
+    @include sp{
+        flex-direction: column;
+    }
     &_picture{
         img{
             width: 18rem;
+            height: 18rem;
             border-radius: 50%;
-            object-fit: cover;
+            object-fit: center;
+        }
+        @include sp{
+            text-align: center;
         }
     }
     &_name{
@@ -365,6 +510,10 @@
             font-weight: 700;
             line-height: .9;
         }
+        @include sp{
+            text-align: center;
+            padding: 3rem 0;
+        }
     }
 }
 
@@ -373,6 +522,9 @@
     padding: 5rem 0;
     &_tabs{
         display: flex;
+        @include sp{
+            justify-content: space-evenly;
+        }
         &_tab{
             cursor: pointer;
             font-size: 2rem;
